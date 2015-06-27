@@ -1,0 +1,151 @@
+1)Learn LIS structure
+
+//Recursive
+lld LISRec(lld arr[] , lld n , int* max_ref){
+
+	lld max_ending_here = 1;
+
+	for(lld i=1 ; i< n ;i++){
+		int res = LISRec(arr , i , max_ref);
+		if(arr[i-1] < arr[n-1] && max_ending_here < res+1){
+			max_ending_here = res + 1;
+		}
+	}
+	
+	if (*max_ref < max_ending_here)
+       *max_ref = max_ending_here;
+       
+	return maxval;
+}
+// using DP 
+
+lld LISarr[n];
+lld parent[n];
+
+for(lld i=1 ; i< n ;i++){
+		for(lld j=0 ; j< i ; j++){
+			if(arr[i] > arr[j] && LISarr[i] < LISarr[j] + 1){
+				LISarr[i] = LISarr[j] + 1;
+				parent[i] = j;
+				maxval = std::max(maxval , LISarr[i]);
+				if(maxval == LISarr[i])
+					index = i;
+			}
+		}
+	}	
+return maxval;
+
+	
+Problems :
+a)set-3-longest-increasing-subsequence/
+b)set-14-maximum-sum-increasing-subsequence/
+c)set-15-longest-bitonic-subsequence/
+d)set-20-maximum-length-chain-of-pairs/
+e)set-21-box-stacking-problem/
+f)http://www.geeksforgeeks.org/dynamic-programming-set-14-variations-of-lis/ (IMPORTANT)
+
+
+2)Learn 0-1 Knapsack structure 
+
+Problems
+a)set-7-coin-change/
+b)set-10-0-1-knapsack-problem/
+c)set-18-partition-problem/ (Subset Sum)
+
+//Recursive 
+
+int count(int val[], int wt[] , int N , int W){
+	int c = 0;
+
+	if(N == 0 || W == 0)
+		return 0;
+
+	if(wt[N-1] >W)
+		return count(val , wt , N-1 , W) ;
+
+	c = std::max(count(val , wt , N-1 , W) , //not taking mth coin
+			val[N-1] + count(val , wt , N-1 , W - wt[N-1]));//taking mth coin
+
+	return c;
+}
+
+countDP(int val[], int wt[] , int N , int W){								
+	int table[N+1][W+1]; //one more than no of items 				
+	re(i , 0 , N+1)							
+		table[i][0] = 0;						
+	re(i , 0 , W+1)							
+		table[0][i] = 0;						
+	re(i , 1 , N+1){							
+	re(j , 1 , W+1){							
+		if(wt[i-1] > j){						
+			table[i][j] = table[i-1][j];					
+			continue;					
+		}						
+		table[i][j] = std::max(table[i-1][j-wt[i-1]] + val[i-1] , table[i-1][j]);						
+
+
+3)Learn Matrix chain multiplication order (very useful ) , especially learn how to fill the matrix
+
+call using count(matrix , 1 , N-1) // N means N-1 matrices
+
+int countmatrixChainREC(int S[],int i , int j){
+	if(i == j)
+		return 0;
+
+	int c=0 , min =1000000;
+	re(k , i , j){
+		c = count(S, i , k) + count(S , k+1 ,j) + S[i-1]*S[k]*S[j]; ( (i-1 X k)*(k X j) )
+		if(c<min)
+			min = c;
+	}
+
+	return min;
+}
+
+//Usual Structure 
+matrix-chain-multiplication								
+int m[n][n];								
+for (L=2; L<n; L++)  								
+{								
+	for (i=1; i<=n-L+1; i++)							
+	{							
+		j = i+L-1;						
+		m[i][j] = INT_MAX;						
+		for (k=i; k<=j-1; k++)						
+		{						
+return m[1][n-1]								
+								
+longest-palindromic-subsequence/						Palindrome Partitioning)		
+ int n = strlen(str);									int n = strlen(str);		
+ int L[n][n]; 											int C[n][n];		
+for (L=2; L<=n; L++)									for (L=2; L<=n; L++)		
+    {						    						{		
+        for (i=0; i<n-L+1; i++)						     // For substring of length L, set different possible starting indexes		
+        {						        					for (i=0; i<n-L+1; i++)		
+		j = i + L - 1;				        					{		
+																j = i+L-1; // Set ending index
+    return L[0][n-1];											for (k=i; k<=j-1; k++)
+														return C[0][n-1];		
+								
+
+
+Problems 
+a)Set-8-matrix-chain-multiplication/
+b)set-11-egg-dropping-puzzle/
+c)set-12-longest-palindromic-subsequence/
+d)set-17-palindrome-partitioning/
+
+
+No Category problems :
+
+Set-4-longest-common-subsequence/
+set-5-edit-distance/
+set-6-min-cost-path/
+set-9-binomial-coefficient/ 
+set-13-cutting-a-rod/
+set-16-floyd-warshall-algorithm/
+set-18-word-wrap/
+set-23-bellman-ford-algorithm/
+set-24-optimal-binary-search-tree/
+
+

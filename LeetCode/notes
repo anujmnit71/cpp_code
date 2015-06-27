@@ -1,0 +1,11 @@
+1) instead of keeping start and end just move array pointer and note that adjust the size accordingly 
+
+e.g. 
+
+if (b[m/2] >= a[n/2]){  
+             if ((n/2 + 1 + m/2) >= k)  
+                return GetMedian(a, n, b, m/2, k);  // to reject last half of b
+             else  
+                return GetMedian(a + n/2 + 1, n - (n/2 + 1), b, m, k - (n/2 + 1)); // to reject first half of a   
+        }  
+              
