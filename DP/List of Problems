@@ -15,7 +15,7 @@ lld LISRec(lld arr[] , lld n , int* max_ref){
 	if (*max_ref < max_ending_here)
        *max_ref = max_ending_here;
        
-	return maxval;
+	return max_ending_here;
 }
 // using DP 
 
@@ -76,12 +76,14 @@ countDP(int val[], int wt[] , int N , int W){
 	re(i , 0 , W+1)							
 		table[0][i] = 0;						
 	re(i , 1 , N+1){							
-	re(j , 1 , W+1){							
-		if(wt[i-1] > j){						
-			table[i][j] = table[i-1][j];					
-			continue;					
-		}						
-		table[i][j] = std::max(table[i-1][j-wt[i-1]] + val[i-1] , table[i-1][j]);						
+		re(j , 1 , W+1){							
+			if(wt[i-1] > j){						
+				table[i][j] = table[i-1][j];					
+				continue;					
+			}						
+			table[i][j] = std::max(table[i-1][j-wt[i-1]] + val[i-1] , table[i-1][j]);
+		}
+	}		
 
 
 3)Learn Matrix chain multiplication order (very useful ) , especially learn how to fill the matrix
