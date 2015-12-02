@@ -1,8 +1,9 @@
+/*
 typedef .... T; // Where "...." is a placeholder for any C++ type.
 class Stack {
 public:
-	class Underflow { /* ... */ }; // WARNING: be cautious when using
-	class Overflow { /* ... */ }; // exception specifiers...
+	class Underflow {  ...  }; // WARNING: be cautious when using
+	class Overflow {  ...  }; // exception specifiers...
 	Stack (size_t size);
 	Stack (const Stack &rhs);
 	void operator= (const Stack &rhs);
@@ -70,9 +71,10 @@ void foo (void) {
 		s1.push (42); // Exception, push’d full stack!
 		s2.pop (item); // Exception, pop’d empty stack!
 		s2.top_ = 10; // Access violation caught!
-	} catch (Stack::Underflow) { /* Handle underflow... */ }
-	catch (Stack::Overflow) { /* Handle overflow... */ }
-	catch (...) { /* Catch anything else... */ throw; }
+	} catch (Stack::Underflow) {  Handle underflow...  }
+	catch (Stack::Overflow) {  Handle overflow...  }
+	catch (...) {  Catch anything else...  throw; }
 } // Termination is handled automatically.
 
 
+*/

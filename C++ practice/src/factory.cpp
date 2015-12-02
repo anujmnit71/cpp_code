@@ -1,12 +1,9 @@
+/*
 #include<cstdio>
+#include<iostream>
 using namespace std;
 
 class Button{
-public:
-	virtual void paint() = 0;
-};
-
-class ScrollBar{
 public:
 	virtual void paint() = 0;
 };
@@ -89,3 +86,4 @@ class MacGui{
 		cout<<"Creating Win button \n";
 	}
 };
+*/

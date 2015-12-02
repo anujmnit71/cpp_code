@@ -1,3 +1,4 @@
+/*
 //============================================================================
 // Name        : test_migw.cpp
 // Author      : 
@@ -14,8 +15,7 @@ using namespace std;
 int main() {
 	cout << "!!!Hello World!!!" << endl; // prints !!!Hello World!!!
 	int i =10;
-	pri
-	i++;
 	printf("%d",i);
 	return 0;
 }
+*/

@@ -1,5 +1,6 @@
 /*
 
+
 //============================================================================
 // Name        : linked_list.cpp
 // Author      : 
@@ -18,6 +19,7 @@
 #define SIZE 100
 
 using namespace std;
+
 
 
 class Solution {
@@ -49,6 +51,7 @@ public:
         }
     }
 };
+
 
 
 class Solution{
@@ -124,4 +127,5 @@ int main(){
 	}
 	return 0;
 }
+
 */

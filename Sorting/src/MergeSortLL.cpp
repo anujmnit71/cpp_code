@@ -15,6 +15,7 @@
 #include<list>
 #include<stack>
 #include<map>
+#include<cstdio>
 using namespace std;
 
 #define re(i, l, r) for (int i=l; i<r; i++)
@@ -106,6 +107,7 @@ void movenode(struct node * &dest , struct node * &src){ // move src node in fro
 
 }
 
+/*
 
 struct node* merge(struct node* first , struct node* second){
 
@@ -141,6 +143,7 @@ struct node* merge(struct node* first , struct node* second){
 
 	return temp;
 }
+*/
 
 
 struct node* merge(struct node* first , struct node* second){
@@ -228,7 +231,7 @@ int main()
 	nodeptr head1=NULL ,head2 = NULL ;
 	int test;
 	int n , element;
-	ifstream infile("ip");
+	ifstream infile("ipSorting");
 	infile>>test;
 
 	while(test--){
@@ -238,12 +241,12 @@ int main()
 			insert(&head1,element);
 		}
 		display(head1);
-		infile>>n;
+		/*infile>>n;
 		for(int i=0 ; i<n ; i++){
 			infile>>element;
 			insert(&head2,element);
 		}
-		display(head2);
+		display(head2);*/
 		struct node *first1 , *first2 , *second1 , *second2;
 
 		//split(first1 , first2 , head1);

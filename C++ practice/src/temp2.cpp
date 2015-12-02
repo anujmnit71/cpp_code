@@ -1,3 +1,4 @@
+/*
 template <typename T> class Node; // forward declaration.
 template <typename T> class L_Stack : public Stack<T> {
 public:
@@ -44,3 +45,4 @@ int main (int argc, char **) {
 	sp->push (10);
 	print_top (sp.get ());
 }
+*/

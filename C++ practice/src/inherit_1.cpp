@@ -1,4 +1,7 @@
+/*
 #include<iostream>
+#include<cstdio>
+
 using namespace std;
 
 class Base{
@@ -12,7 +15,7 @@ class Base{
 			Base(const Base& b){
 				puts("Copy ctor called \n");
 			}
-			
+			//~Base(){};
 			Base& operator=(const Base& b){
 				puts("Assign called \n");
 			}
@@ -58,3 +61,4 @@ int main(){
 	//d1.func(d1);
 	//d1 = (Derived)b1;
 }
+*/

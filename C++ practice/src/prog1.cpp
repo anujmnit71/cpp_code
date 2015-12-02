@@ -1,3 +1,4 @@
+/*
 // Name:Anuj Kumar Verma
 // Summary:
 
@@ -20,7 +21,7 @@ using namespace std;
 
 typedef unsigned long long int ull;
 
-/*
+
 int mycount(string str)
 {
 	int count_dash[10] = {6,2,5,5,4,5,6,4,7,6};
@@ -33,7 +34,7 @@ int mycount(string str)
 
 	return count ;
 }
-*/
+
 
 ull modpow(ull base, ull exp, ull modulus) {
   base %= modulus;
@@ -80,3 +81,4 @@ int main()
 		cout<<"result == "<<mycount(N , 3)<<endl;
 	}
 }
+*/

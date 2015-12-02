@@ -1,3 +1,4 @@
+/*
 
 #include<cstdio>
 #include<iostream>
@@ -22,7 +23,7 @@ int main()
 	//cin>>test;
 	ifstream infile("ip");
 	if(infile)
-	cout<<"success"<<endl;
+		cout<<"success"<<endl;
 	infile>>test;
 
 	while(test--){
@@ -33,3 +34,4 @@ int main()
 
 	return 0;
 }
+*/

@@ -1,3 +1,4 @@
+/*
 #include<cstdio>
 #include<iostream>
 
@@ -22,11 +23,10 @@ public:
 
 		void (*ptrfunccall)( sample*const, int);
 		ptrfunccall = (void (*)( sample*const, int ))ptrfunc;
-		(*ptrfunccall)(this,25);
-		ptrfunc = (int*)(pt
-		rfunc +1);// not calling second virtual function
-		ptrfunccall = (void (*)( sample*const, int ))ptrfunc;
 		(*ptrfunccall)(this,5);
+		//ptrfunc = (int*)(ptrfunc +1);// not calling second virtual function
+		//ptrfunccall = (void (*)( sample*const, int ))ptrfunc;
+		//(*ptrfunccall)(this,5);
 		
 	}
 
@@ -36,3 +36,4 @@ int main(){
 	sample s;
 	s.g();
 }
+*/

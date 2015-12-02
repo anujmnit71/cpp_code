@@ -1,3 +1,4 @@
+/*
 template <typename T> class Stack {
 public:
 	Stack (size_t size);
@@ -17,7 +18,7 @@ template <typename T> inline
 Stack<T>::Stack (size_t size): top_ (0), size_ (size), stack_ (new T[size]) { }
 
 template <typename T> inline 
-Stack<T>::~Stack (void) { /* no-op! */ }
+Stack<T>::~Stack (void) {  no-op!  }
 
 template <typename T> inline void
 Stack<T>::push (const T &item) { stack_[top_++] = item; }
@@ -37,3 +38,4 @@ void foo (void) {
 	s3.pop (sar);
 	delete sar; // Termination of s1, s2, & s3 handled automatically
 }
+*/

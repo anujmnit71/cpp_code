@@ -1,3 +1,4 @@
+/*
 #include <iostream>
 #include<cstdlib>
 #include<fstream>
@@ -108,3 +109,4 @@ int main(){
 	cout<<parent.startsWith("catvr")<<endl;
 	return 0;
 }
+*/
