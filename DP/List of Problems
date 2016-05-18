@@ -1,4 +1,13 @@
+#define re(i, l, r) for (int i=l; i<r; i++)
 1)Learn LIS structure
+	
+Problems :
+a)set-3-longest-increasing-subsequence/
+b)set-14-maximum-sum-increasing-subsequence/
+c)set-15-longest-bitonic-subsequence/
+d)set-20-maximum-length-chain-of-pairs/
+e)set-21-box-stacking-problem/
+f)http://www.geeksforgeeks.org/dynamic-programming-set-14-variations-of-lis/ (IMPORTANT)
 
 //Recursive
 lld LISRec(lld arr[] , lld n , int* max_ref){
@@ -29,20 +38,12 @@ for(lld i=1 ; i< n ;i++){
 				parent[i] = j;
 				maxval = std::max(maxval , LISarr[i]);
 				if(maxval == LISarr[i])
-					index = i;
+					index = i;// index is index of the LIS last number
 			}
 		}
 	}	
 return maxval;
 
-	
-Problems :
-a)set-3-longest-increasing-subsequence/
-b)set-14-maximum-sum-increasing-subsequence/
-c)set-15-longest-bitonic-subsequence/
-d)set-20-maximum-length-chain-of-pairs/
-e)set-21-box-stacking-problem/
-f)http://www.geeksforgeeks.org/dynamic-programming-set-14-variations-of-lis/ (IMPORTANT)
 
 
 2)Learn 0-1 Knapsack structure 
@@ -87,15 +88,25 @@ countDP(int val[], int wt[] , int N , int W){
 
 
 3)Learn Matrix chain multiplication order (very useful ) , especially learn how to fill the matrix
+Problems 
+a)Set-8-matrix-chain-multiplication/
+b)set-11-egg-dropping-puzzle/
+c)set-12-longest-palindromic-subsequence/
+d)set-17-palindrome-partitioning/
 
-call using count(matrix , 1 , N-1) // N means N-1 matrices
+
+For matrix : [axb] , [bxc] , [cxd]
+S is : 				[a,b,c,d]
+Matrix Ai has dimension p[i-1] x p[i] for i = 1..n
+call using count(matrix , 1 , N-1) // N entries means N-1 matrices
 
 int countmatrixChainREC(int S[],int i , int j){
 	if(i == j)
 		return 0;
 
 	int c=0 , min =1000000;
-	re(k , i , j){
+	//re(k , i , j){
+	for(int k=i ; k < j ; k++){
 		c = count(S, i , k) + count(S , k+1 ,j) + S[i-1]*S[k]*S[j]; ( (i-1 X k)*(k X j) )
 		if(c<min)
 			min = c;
@@ -103,6 +114,7 @@ int countmatrixChainREC(int S[],int i , int j){
 
 	return min;
 }
+
 
 //Usual Structure 
 matrix-chain-multiplication								
@@ -116,26 +128,29 @@ for (L=2; L<n; L++)
 		for (k=i; k<=j-1; k++)						
 		{						
 return m[1][n-1]								
+
+//Palindromic Partitioning recursive
+Call using palindREC(arr1,0,length-1)
+function def : int palindREC(char str[] , int m , int n){
+
+for(int k=m ; k < n; k++){
+		c = min (c, 1 + palind(str , m , k) // string of index [m,k]
+						+ palind( str , k+1  , n) // string of index [k+1,n]
+				); 
 								
-longest-palindromic-subsequence/						Palindrome Partitioning)		
+longest-palindromic-subsequence/						Palindrome Partitioning
  int n = strlen(str);									int n = strlen(str);		
  int L[n][n]; 											int C[n][n];		
 for (L=2; L<=n; L++)									for (L=2; L<=n; L++)		
     {						    						{		
         for (i=0; i<n-L+1; i++)						     // For substring of length L, set different possible starting indexes		
         {						        					for (i=0; i<n-L+1; i++)		
-		j = i + L - 1;				        					{		
+		j = i + L - 1;				        				{		
 																j = i+L-1; // Set ending index
     return L[0][n-1];											for (k=i; k<=j-1; k++)
 														return C[0][n-1];		
 								
 
-
-Problems 
-a)Set-8-matrix-chain-multiplication/
-b)set-11-egg-dropping-puzzle/
-c)set-12-longest-palindromic-subsequence/
-d)set-17-palindrome-partitioning/
 
 
 No Category problems :
